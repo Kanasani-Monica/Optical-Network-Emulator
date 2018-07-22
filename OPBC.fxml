@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.collections.FXCollections?>
+
+<GridPane alignment="CENTER" hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" vgap="30.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <columnConstraints>
+      <ColumnConstraints prefWidth="240.0" />
+      <ColumnConstraints prefWidth="372.0" />
+      <ColumnConstraints />
+      <ColumnConstraints prefWidth="220.0" />
+      <ColumnConstraints prefWidth="290.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Label fx:id="labelBR" alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="240.0" text="Bit Rate (B) (in Gb/s):">
+         <font>
+            <Font name="Times Bold" size="18.0" />
+         </font></Label>
+      <TextField fx:id="textBR" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="372.0" GridPane.columnIndex="1">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Label fx:id="labelLength" text="Length of Cable (L) (in km):" GridPane.columnIndex="3">
+         <font>
+            <Font name="Times Bold" size="18.0" />
+         </font></Label>
+      <TextField fx:id="textLength" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="290.0" GridPane.columnIndex="4">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Label fx:id="labelConnectors" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefWidth="240.0" text="Number of Connectors:" GridPane.rowIndex="2">
+         <font>
+            <Font name="Times Bold" size="18.0" />
+         </font></Label>
+      <TextField fx:id="textConnectors" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="372.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Label fx:id="labelPowerBudget" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="22.0" prefWidth="264.0" text="Optical Power Budget (in dB):" GridPane.rowIndex="3">
+         <font>
+            <Font name="Times Bold" size="18.0" />
+         </font></Label>
+      <Label fx:id="labelCable" alignment="CENTER_RIGHT" prefWidth="215.0" text="Optical Cable:" GridPane.columnIndex="3" GridPane.rowIndex="2">
+         <font>
+            <Font name="Times Bold" size="18.0" />
+         </font></Label>
+      <Button mnemonicParsing="false" onAction="#showResult" text="Submit" GridPane.columnIndex="3" GridPane.rowIndex="5">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Label fx:id="labelTransmitter" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefWidth="240.0" text="Transmitter:" GridPane.rowIndex="1">
+         <font>
+            <Font name="Times Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelReceiver" alignment="CENTER_RIGHT" prefWidth="215.0" text="Receiver:" GridPane.columnIndex="3" GridPane.rowIndex="1">
+         <font>
+            <Font name="Times Bold" size="18.0" />
+         </font>
+      </Label>
+
+       <ChoiceBox fx:id="dropdownTransmitter" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+           <items>
+               <FXCollections fx:factory="observableArrayList">
+                   <String fx:value="LED" />
+                   <String fx:value="Laser" />
+               </FXCollections>
+           </items>
+       </ChoiceBox>
+
+       <ChoiceBox fx:id="dropdownReceiver" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+           <items>
+               <FXCollections fx:factory="observableArrayList">
+                   <String fx:value="PIN" />
+                   <String fx:value="Avalanche" />
+               </FXCollections>
+           </items>
+       </ChoiceBox>
+
+      <TextArea fx:id="textCable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="290.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+      <TextArea fx:id="textPowerBudget" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+   </children>
+</GridPane>
